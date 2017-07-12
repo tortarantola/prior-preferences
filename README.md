@@ -12,7 +12,7 @@ Stan fit objects and response time model predictions are too big for GitHub, but
 <a href='http://www.tortarantola.com/'>Tor Tarantola</a> (Department of Psychology, University of Cambridge)<br>
 <a href='https://sites.google.com/site/dharshankumaran1/'>Dharshan Kumaran</a> (Institute of Cognitive Neuroscience, University College London)</a><br>
 <a href='http://www.gatsby.ucl.ac.uk/~dayan/'>Peter Dayan</a> (Gatsby Computational Neuroscience Unit, University College London)<br>
-<a href='http://www.bdmlab.org'>Benedetto De Martino</a> (Department of Psychology, University of Cambridge)
+<a href='http://www.bdmlab.org'>Benedetto De Martino</a> (Institute of Cognitive Neuroscience, University College London)
 
 ### Contact
 <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>
