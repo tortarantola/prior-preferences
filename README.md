@@ -1,6 +1,6 @@
 ### Prior preferences beneficially influence social and non-social learning
 Data, code, and materials for Tarantola, Kumaran, Dayan, & De Martino. Prior preferences beneficially influence social and non-social learning. <i>Nature Communications</i> (in press).
-Stan fit objects are too big for GitHub, but are available on request (contact <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>).
+Stan fit objects and response time model predictions are too big for GitHub, but are available on request (contact <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>). They can also be run locally using the script in the "analyses" Jupyter notebook in the analysis_code folder.
 
 ### Organization
 * ***Data*** Raw and processed data files are contained in the 'data/' folder. Data from the social experiment are in the 'social' subfolder, and data for the non-social experiment are in the 'non_social' folder. Pilot data are in the 'social_pilot' folder. The 'combined' folder contains the processed data from both the social and nonsocial experiments, combined into a single data file. The participant log includes details on each participant, along with contemporaneous notes on the testing session.
