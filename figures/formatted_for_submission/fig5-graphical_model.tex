@@ -1,0 +1,80 @@
+\documentclass[11pt]{report}
+\linespread{1.6}
+\usepackage[parfill]{parskip}
+\usepackage[margin=1in, papersize={20cm, 20cm}]{geometry}
+\usepackage{float}
+\usepackage{booktabs,multirow}
+\usepackage{graphicx}
+\usepackage{color,soul}
+\graphicspath{ {images/} }
+\usepackage{tikz}
+\usetikzlibrary{bayesnet}
+\begin{document}
+\pagenumbering{gobble}
+
+\-\ \\
+   %\begin{minipage}{0.5\textwidth}
+    \begin{figure}[H]
+      %\centering
+      \tikz{ %
+        \node[obs] (response) {choice/RT }; %
+        \node[latent, above=of response, yshift=0.1cm] (threshold) {threshold} ;
+        \node[latent, left=of threshold, xshift=-0.6cm](omega) {$\omega$} ;
+         \node[latent, left=of omega](beta_dv) {$\beta_{\Delta v}$} ;
+          \node[latent, left=of beta_dv](beta_rho) {$\beta_{\rho}$} ;
+        
+        \node[latent, above=of beta_dv, xshift=-0.5cm, yshift=0.25cm] (mu_beta_dv) {$\mu_{\beta\Delta v}$} ; %
+        \node[latent, above=of beta_dv, xshift=0.5cm, yshift=0.25cm] (sigma_beta_dv) {$\sigma_{\beta\Delta v}$} ; %
+        \node[latent, above=of beta_rho, xshift=-0.4cm, yshift=0.4cm] (mu_beta_rho) {$\mu_{\beta \rho}$} ; %
+        \node[latent, above=of beta_rho, xshift=0.4cm, yshift=0.4cm] (sigma_beta_rho) {$\sigma_{\beta \rho}$} ; %
+        
+        \node[latent, above=of omega, xshift=-0.4cm, yshift=0.4cm] (mu_omega) {$\mu_{\omega}$} ; %
+        \node[latent, above=of omega, xshift=0.4cm, yshift=0.4cm] (sigma_omega) {$\sigma_{\omega}$} ; %
+        \node[latent, above=of threshold, xshift=-0.4cm] (mu_threshold) {$\mu_{a}$} ; %
+        \node[latent, above=of threshold, xshift=0.4cm] (sigma_threshold) {$\sigma_{a}$} ; %
+
+        \node[latent, right=of response](s) {s} ;
+        \node[det, left=of response](drift) {drift rate} ;
+        \node[det, left=of drift](value) {value} ;
+        \node[obs, left=of value](feedback) {feedback} ;
+        \node[obs, below=of value, yshift=-0.8cm](dv) {$\Delta v$} ;
+        \node[obs, left=of dv](rho) {$\rho$} ;
+        \node[det, right=of dv](choice_bias) {choice bias} ;
+        
+        \node[latent, below=of choice_bias](kappa_z) {$\kappa$} ;
+        \node[latent, below=of kappa_z, xshift=-0.4cm](mu_kappa_z) {$\mu_{\kappa}$} ;
+        \node[latent, below=of kappa_z, xshift=0.4cm](sigma_kappa_z) {$\sigma_{\kappa}$} ;
+        
+        
+        \plate[inner sep=0.25cm, xshift=-0.12cm, yshift=0cm] {plate1} {(response) (feedback)} {30 trials}; %
+        \plate[inner sep=0.25cm, xshift=-0.12cm, yshift=0cm] {plate2} {(rho)(dv)(choice_bias)(plate1)} {20 item pairs}; %
+        \plate[inner sep=0.25cm, xshift=-0.12cm, yshift=0.12cm] {plate3} {(s)(threshold)(kappa_z) (plate2)} {31/30 participants}; %
+        
+        \edge {mu_beta_dv} {beta_dv} ; %
+        \edge {sigma_beta_dv}{beta_dv} ;
+        \edge {mu_beta_rho} {beta_rho} ; %
+        \edge {sigma_beta_rho}{beta_rho} ;
+        \edge {mu_omega} {omega} ; %
+        \edge {sigma_omega}{omega} ;
+        \edge {mu_threshold} {threshold} ; %
+        \edge {sigma_threshold} {threshold} ; %
+        \edge {threshold} {response} ; %
+        \edge {value} {drift};
+        \edge {omega} {drift};
+        \edge {beta_rho} {value} ; %
+        \edge {beta_dv} {value} ; %
+        \edge {drift} {response};
+        \edge {feedback} {value} ;
+        \edge {dv} {value} ;
+        \edge {dv} {choice_bias} ;
+        \edge {rho} {value} ;
+        \edge {choice_bias} {response} ;
+        \edge {s} {response} ;
+        \edge {kappa_z} {choice_bias} ;
+        \edge {mu_kappa_z} {kappa_z} ;
+        \edge {sigma_kappa_z} {kappa_z} ;
+      }
+    \end{figure}
+    %\end{minipage} \hfill
+   
+\end{document}
