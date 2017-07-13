@@ -1,6 +1,6 @@
 ### Prior preferences beneficially influence social and non-social learning
 Data, code, and materials for Tarantola, Kumaran, Dayan, & De Martino. Prior preferences beneficially influence social and non-social learning. <i>Nature Communications</i> (in press).
-Stan fit objects and response time model predictions are too big for GitHub, but are available on request (contact <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>). They can also be run locally using the script in the "analyses" Jupyter notebook in the analysis_code folder.
+Stan fit objects and response time model predictions are too big for GitHub, but are available on request (contact <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>). They can also be run locally using the Stan scripts (Stan models; see ***Analysis*** below) and the script in the "analyses" Jupyter notebook in the analysis_code folder (response time model predictions). Running models locally will result in slightly different outputs due to the stochastic nature of the sampling algorithm.
 
 ### Organization
 * ***Data*** Raw and processed data files are contained in the 'data/' folder. Data from the social experiment are in the 'social' subfolder, and data for the non-social experiment are in the 'non_social' folder. Pilot data are in the 'social_pilot' folder. The 'combined' folder contains the processed data from both the social and nonsocial experiments, combined into a single data file. The participant log includes details on each participant, along with contemporaneous notes on the testing session.
@@ -18,4 +18,4 @@ Stan fit objects and response time model predictions are too big for GitHub, but
 <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>
 
 ### Figshare
-A copy of this repository is also on Figshare (DOI: 10.6084/m9.figshare.5198572).
+A copy of this repository is also on Figshare (DOI: 10.6084/m9.figshare.5198572), versioned to the git release tags.
