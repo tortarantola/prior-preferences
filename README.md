@@ -1,5 +1,5 @@
 ### Prior preferences beneficially influence social and non-social learning
-Data, code, and materials for Tarantola, Kumaran, Dayan, & De Martino. Prior preferences beneficially influence social and non-social learning. <i>Nature Communications</i> (in press).
+Data, code, and materials for Tarantola, Kumaran, Dayan, & De Martino. Prior preferences beneficially influence social and non-social learning. <i>Nature Communications</i> (2017).
 Stan fit objects and response time model predictions are too big for GitHub, but are available on request (contact <a href='mailto:tor.tarantola@gmail.com'>tor.tarantola@gmail.com</a>). They can also be run locally using the Stan scripts (Stan models; see ***Analysis*** below) and the script in the "analyses" Jupyter notebook in the analysis_code folder (response time model predictions). Running models locally will result in slightly different outputs due to the stochastic nature of the sampling algorithm.
 
 ### Organization
